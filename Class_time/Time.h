@@ -29,6 +29,7 @@ public:
 	//Сложение двух экземпляров класса Time
 	Time AddTime(const Time addOne, const Time addTwo);
 
+
 	//Вывод времени 
 	void const Display();
 
