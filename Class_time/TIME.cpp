@@ -1,16 +1,9 @@
 #include "Time.h"
 
-
-
-Time::Time()
-{
-}
-
-
-Time::~Time()
-{
-}
-
+//Стандартный конструктор
+Time::Time() {}
+//Деструктор
+Time::~Time() {}
 //Cпециальный конструкутор
 Time::Time(short your_hour, short your_minute, short your_second)
 {
@@ -18,6 +11,7 @@ Time::Time(short your_hour, short your_minute, short your_second)
 	minute = (your_minute <= 59 && your_minute >= 0) ? your_minute : 0;
 	second = (your_second <= 59 && your_second >= 0) ? your_second : 0;
 }
+
 
 //Сложение двух экземпляров класса Time
 Time Time::AddTime(const Time addOne, const Time addTwo)
@@ -42,6 +36,124 @@ Time Time::AddTime(const Time addOne, const Time addTwo)
 	return resultAdd;
 }
 
+//Вычитание двух экземпляров класса Time
+Time Time::SubTime(const Time addOne, const Time addTwo)
+{
+
+}
+
+
+
+//Прибавление часов к времени
+void Time::AddHour(int H)
+{
+
+}
+
+//Прибавление минут к времени
+void Time::AddMinute(int M)
+{
+
+}
+
+//Прибавление секунд к времени
+void Time::AddSecond(int S)
+{
+
+}
+
+
+
+//Вычитание часов из времени
+void Time::SubHour(int H)
+{
+
+}
+
+//Вычитание минут из времени
+void Time::SubMinute(int M)
+{
+
+}
+
+//Вычитание секунд из времени
+void Time::SubSecond(int S)
+{
+
+}
+
+
+
+//Перевод времени в часы
+//Вернёт кол-во часов в текущем времени 
+short Time::TimeInHour()
+{
+
+}
+
+//Перевод времени в минуты
+//Вернёт кол-во минут в текущем времени 
+short Time::TimeInMinute()
+{
+
+}
+
+//Перевод времени в секунды
+//Вернёт кол-во секунд в текущем времени 
+short Time::TimeInSecond()
+{
+
+}
+
+
+
+//Пребразование времени в строку
+string Time::TimeInString()
+{
+
+}
+
+
+
+//Вернуть текущее кол-во часов
+short Time::RetHour()
+{
+
+}
+
+//Вернуть текущее кол-во минут
+short Time::RetMinute()
+{
+
+}
+
+//Вернуть текущее кол-во секунд
+short Time::RetSecond()
+{
+
+}
+
+
+
+//Изменить поле часов
+void Time::ChangeHour(short H)
+{
+
+}
+
+//Изменить поле минут
+void Time::ChangeMinute(short M)
+{
+
+}
+
+//Изменить поле секуд
+void Time::ChangeSecond(short S)
+{
+
+}
+
+
 
 //Вывод времени
 void const Time::Display()
@@ -52,8 +164,11 @@ void const Time::Display()
 	cout << hour << " : " << minute << " : " << second << " - " << units('a') << endl;
 }
 
+///////////////////////////////////////////////////////////////////////////////////
+//private
+
 //Строковая функция возвращающая еденицы измерения времени
-//с правильным окнчанием
+//с правильным окнчанием, исп. в меьтоде вывода
 //flag h - часы
 //flag m - минуты
 //flag s - секунды
