@@ -14,50 +14,45 @@ Time::Time(short your_hour, short your_minute, short your_second)
 
 
 //Сложение двух экземпляров класса Time
-Time Time::AddTime(const Time addOne, const Time addTwo)
+Time Time::operator + (const Time& addTwo)
 {
-	Time resultAdd = Time(0, 0, 0);
-	resultAdd.hour = addOne.hour + addTwo.hour;
-	resultAdd.minute = addOne.minute + addTwo.minute;
-	resultAdd.second = addOne.second + addTwo.second;
+	Time Res;
 
-	if (resultAdd.second >= 60)
-	{
-		resultAdd.minute++;
-		resultAdd.second -= 60;
-	}
-	if (resultAdd.minute >= 60)
-	{
-		resultAdd.hour++;
-		resultAdd.minute -= 60;
-	}
-	resultAdd.hour = (resultAdd.hour >= 24) ? resultAdd.hour - 24 : resultAdd.hour;
+	Res.hour = hour + addTwo.hour;
+	Res.minute = minute + addTwo.minute;
+	Res.second = second + addTwo.second;
 
-	return resultAdd;
+	return Res;
 }
 
 //Вычитание двух экземпляров класса Time
-Time Time::SubTime(const Time addOne, const Time addTwo)
+Time Time::operator - (const Time& addTwo)
 {
+	Time Res;
 
+	Res.hour = hour - addTwo.hour;
+	Res.minute = minute - addTwo.minute;
+	Res.second = second - addTwo.second;
+
+	return Res;
 }
 
 
 
 //Прибавление часов к времени
-void Time::AddHour(int H)
+void Time::AddHour(unsigned H)
 {
 
 }
 
 //Прибавление минут к времени
-void Time::AddMinute(int M)
+void Time::AddMinute(unsigned M)
 {
 
 }
 
 //Прибавление секунд к времени
-void Time::AddSecond(int S)
+void Time::AddSecond(unsigned S)
 {
 
 }
@@ -65,19 +60,19 @@ void Time::AddSecond(int S)
 
 
 //Вычитание часов из времени
-void Time::SubHour(int H)
+void Time::SubHour(unsigned H)
 {
 
 }
 
 //Вычитание минут из времени
-void Time::SubMinute(int M)
+void Time::SubMinute(unsigned M)
 {
 
 }
 
 //Вычитание секунд из времени
-void Time::SubSecond(int S)
+void Time::SubSecond(unsigned S)
 {
 
 }
@@ -88,21 +83,27 @@ void Time::SubSecond(int S)
 //Вернёт кол-во часов в текущем времени 
 short Time::TimeInHour()
 {
+	short H = 0;
 
+	return H;
 }
 
 //Перевод времени в минуты
 //Вернёт кол-во минут в текущем времени 
 short Time::TimeInMinute()
 {
+	short M = 0;
 
+	return M;
 }
 
 //Перевод времени в секунды
 //Вернёт кол-во секунд в текущем времени 
 short Time::TimeInSecond()
 {
+	short S = 0;
 
+	return S;
 }
 
 
@@ -110,45 +111,47 @@ short Time::TimeInSecond()
 //Пребразование времени в строку
 string Time::TimeInString()
 {
+	string TimeString = "";
 
+	return TimeString;
 }
 
 
 
-//Вернуть текущее кол-во часов
-short Time::RetHour()
+//Вернуть значение поля часов
+short Time::GetHour()
 {
-
+	return hour;
 }
 
-//Вернуть текущее кол-во минут
-short Time::RetMinute()
+//Вернуть значение поля минут
+short Time::GetMinute()
 {
-
+	return minute;
 }
 
-//Вернуть текущее кол-во секунд
-short Time::RetSecond()
+//Вернуть значение поля секунд
+short Time::GetSecond()
 {
-
+	return second;
 }
 
 
 
 //Изменить поле часов
-void Time::ChangeHour(short H)
+void Time::SetHour(short H)
 {
 
 }
 
 //Изменить поле минут
-void Time::ChangeMinute(short M)
+void Time::SetMinute(short M)
 {
 
 }
 
 //Изменить поле секуд
-void Time::ChangeSecond(short S)
+void Time::SetSecond(short S)
 {
 
 }

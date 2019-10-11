@@ -10,7 +10,11 @@ void main()
 {
 	setlocale(0, "");
 
-	Time x = Time(10, 8, 19);
+	Time x = Time(23, 59, 59);
+	Time y = Time(23, 59, 59);
+
+	Time c = x + y;
+	c.Display();
 
 	system("pause");
 }

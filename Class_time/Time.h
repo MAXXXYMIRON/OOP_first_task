@@ -26,25 +26,25 @@ public:
 
 
 	//Сложение двух экземпляров класса Time
-	Time AddTime(const Time addOne, const Time addTwo);
+	Time operator + (const Time& addTwo);
 	//Вычитание двух экземпляров класса Time
-	Time SubTime(const Time addOne, const Time addTwo);
+	Time operator - (const Time& addTwo);
 
 
 	//Прибавление часов к времени
-	void AddHour(int H);
+	void AddHour(unsigned H);
 	//Прибавление минут к времени
-	void AddMinute(int M);
+	void AddMinute(unsigned M);
 	//Прибавление секунд к времени
-	void AddSecond(int S);
+	void AddSecond(unsigned S);
 
 	
 	//Вычитание часов из времени
-	void SubHour(int H);
+	void SubHour(unsigned H);
 	//Вычитание минут из времени
-	void SubMinute(int M);
+	void SubMinute(unsigned M);
 	//Вычитание секунд из времени
-	void SubSecond(int S);
+	void SubSecond(unsigned S);
 
 
 	//Перевод времени в часы
@@ -62,20 +62,20 @@ public:
 	string TimeInString();
 
 
-	//Вернуть текущее кол-во часов
-	short RetHour();
-	//Вернуть текущее кол-во минут
-	short RetMinute();
-	//Вернуть текущее кол-во секунд
-	short RetSecond();
+	//Вернуть значение поля часов
+	short GetHour();
+	//Вернуть значение поля минут
+	short GetMinute();
+	//Вернуть значение поля секунд
+	short GetSecond();
 
 
 	//Изменить поле часов
-	void ChangeHour(short H);
+	void SetHour(short H);
 	//Изменить поле минут
-	void ChangeMinute(short M);
+	void SetMinute(short M);
 	//Изменить поле секуд
-	void ChangeSecond(short S);
+	void SetSecond(short S);
 
 
 	//Вывод времени 
