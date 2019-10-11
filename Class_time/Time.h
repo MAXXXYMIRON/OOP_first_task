@@ -4,13 +4,6 @@
 
 using namespace std;
 
-/**
-	Cпециальный конструктор экземпляра класса Time
-	short your_hour - Часы
-	short your_minute - Минуты
-	short your_second - Секунды
-	Поле обнуляется, если ему присвоено некорректное значение
-**/
 class Time
 {
 private:
@@ -21,7 +14,11 @@ private:
 public:
 	Time();
 	~Time();
-	//Cпециальный конструкутор
+	//Cпециальный конструктор экземпляра класса Time
+	//short your_hour - Часы
+	//short your_minute - Минуты
+	//short your_second - Секунды
+	//Поле обнуляется, если ему присвоено некорректное значение
 	Time(short your_hour, short your_minute, short your_second);
 
 
@@ -49,17 +46,32 @@ public:
 
 	//Перевод времени в часы
 	//Вернёт кол-во часов в текущем времени 
-	short TimeInHour();
+	float TimeInHour();
 	//Перевод времени в минуты
 	//Вернёт кол-во минут в текущем времени 
-	short TimeInMinute();
+	float TimeInMinute();
 	//Перевод времени в секунды
 	//Вернёт кол-во секунд в текущем времени 
-	short TimeInSecond();
+	float TimeInSecond();
 
 
 	//Пребразование времени в строку
 	string TimeInString();
+	//Пребразование времени в строку
+	//Перегрузка метода: с выводом половины дня
+	//flag - 'd'
+	string TimeInString(char flag);
+	//Пребразование времени в строку
+	//Перегрузка метода: с выводом едениц времени
+	//flag - 'hms'
+	string TimeInString(string flag);
+	//Пребразование времени в строку
+	//Перегрузка метода: с выводом едениц времени
+	//Перегрузка метода: с выводом половины дня
+	//flag - 'hms'
+	//flag2 - 'd'
+	string TimeInString(string flag, char flag2);
+
 
 
 	//Вернуть значение поля часов
@@ -77,9 +89,14 @@ public:
 	//Изменить поле секуд
 	void SetSecond(short S);
 
-
-	//Вывод времени 
-	void const Display();
+	
+	//Операторы сравнения
+	bool operator == (const Time& SecondOperand);
+	bool operator != (const Time& SecondOperand);
+	bool operator > (const Time& SecondOperand);
+	bool operator < (const Time& SecondOperand);
+	bool operator <= (const Time& SecondOperand);
+	bool operator >= (const Time& SecondOperand);
 
 private:
 	//Строковая функция возвращающая еденицы измерения времени
