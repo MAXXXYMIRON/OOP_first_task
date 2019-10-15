@@ -1,6 +1,7 @@
 #include<iostream>
 #include<string>
 #include "Time.h"
+#include "ArrayTime.h" 
 
 using namespace std;
 
@@ -8,11 +9,10 @@ using namespace std;
 void main()
 {
 	setlocale(0, "");
-	Time x = Time(5);
-
-	x.SubSecond(1000000);
-
-	cout << x.TimeInString('d') << endl;
+	const unsigned n = 24;
+	
+	Time *ArrTime = memoArrTime(n);
+	initArrTime(n, ArrTime);
 
 	system("pause");
 }
