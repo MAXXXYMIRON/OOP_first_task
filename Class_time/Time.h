@@ -3,23 +3,23 @@
 #include<iostream>
 
 using namespace std;
+typedef char TypeTime;
 
 class Time
 {
 private:
-	short hour;
-	short minute;
-	short second;
+	TypeTime hour;
+	TypeTime minute;
+	TypeTime second;
 
 public:
 	Time();
 	~Time();
 	//Cпециальный конструктор экземпляра класса Time
-	//short your_hour - Часы
-	//short your_minute - Минуты
-	//short your_second - Секунды
 	//Поле обнуляется, если ему присвоено некорректное значение
-	Time(short your_hour, short your_minute, short your_second);
+	Time(TypeTime your_hour, TypeTime your_minute, TypeTime your_second);
+	//Коструткор преобразования задающий время в часах
+	Time(TypeTime your_hour);
 
 
 	//Сложение двух экземпляров класса Time
@@ -66,8 +66,7 @@ public:
 	//flag - 'hms'
 	string TimeInString(string flag);
 	//Пребразование времени в строку
-	//Перегрузка метода: с выводом едениц времени
-	//Перегрузка метода: с выводом половины дня
+	//Перегрузка метода: с выводом едениц времени и половины дня
 	//flag - 'hms'
 	//flag2 - 'd'
 	string TimeInString(string flag, char flag2);
@@ -75,19 +74,19 @@ public:
 
 
 	//Вернуть значение поля часов
-	short GetHour();
+	unsigned GetHour();
 	//Вернуть значение поля минут
-	short GetMinute();
+	unsigned GetMinute();
 	//Вернуть значение поля секунд
-	short GetSecond();
+	unsigned GetSecond();
 
 
 	//Изменить поле часов
-	void SetHour(short H);
+	void SetHour(TypeTime H);
 	//Изменить поле минут
-	void SetMinute(short M);
+	void SetMinute(TypeTime M);
 	//Изменить поле секуд
-	void SetSecond(short S);
+	void SetSecond(TypeTime S);
 
 	
 	//Операторы сравнения

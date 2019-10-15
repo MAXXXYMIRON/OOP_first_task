@@ -5,19 +5,23 @@ Time::Time() {}
 //Деструктор
 Time::~Time() {}
 //Cпециальный конструктор экземпляра класса Time
-//short your_hour - Часы
-//short your_minute - Минуты
-//short your_second - Секунды
 //Поле обнуляется, если ему присвоено некорректное значение
-Time::Time(short your_hour, short your_minute, short your_second)
+Time::Time(TypeTime your_hour, TypeTime your_minute, TypeTime your_second)
 {
-	hour = (your_hour <= 23 && your_hour >= 0) ? your_hour : 0;
-	minute = (your_minute <= 59 && your_minute >= 0) ? your_minute : 0;
-	second = (your_second <= 59 && your_second >= 0) ? your_second : 0;
+	SetHour(your_hour);
+	SetMinute(your_minute);
+	SetSecond(your_second);
+}
+//Конструктор преобразования, задающий часы
+Time::Time(TypeTime your_hour)
+{
+	SetHour(your_hour);
+	minute = 0;
+	second = 0;
 }
 
 
-//Сложение двух экземпляров класса Time
+//Сложение и вычитание объектов класса
 Time Time::operator + (const Time& addTwo)
 {
 	Time Res;
@@ -41,7 +45,6 @@ Time Time::operator + (const Time& addTwo)
 	return Res;
 }
 
-//Вычитание двух экземпляров класса Time
 Time Time::operator - (const Time& addTwo)
 {
 	Time Res;
@@ -70,71 +73,79 @@ Time Time::operator - (const Time& addTwo)
 //Прибавление часов к времени
 void Time::AddHour(unsigned H)
 {
-	hour += H;
-	while (hour > 23)
-	{
-		hour -= 24;
-	}
+	unsigned AddH = hour + H;
+
+	while (AddH > 23)
+		AddH -= 24;
+
+	hour = AddH;
 }
 
 //Прибавление минут к времени
 void Time::AddMinute(unsigned M)
 {
-	minute += M;
-	while (minute > 59)
+	unsigned AddM = minute + M, 
+		H = 0;
+	while (AddM > 59)
 	{
-		minute -= 60;
-		hour++;
+		AddM -= 60;
+		H++;
 	}
-	AddHour(0);
+	minute = AddM;
+	AddHour(H);
 }
 
 //Прибавление секунд к времени
 void Time::AddSecond(unsigned S)
 {
-	second += S;
-	while (second > 59)
+	unsigned AddS = second + S,
+		M = 0;
+	while (AddS > 59)
 	{
-		second -= 60;
-		minute++;
+		AddS -= 60;
+		M++;
 	}
-	AddMinute(0);
+	second = AddS;
+	AddMinute(M);
 }
-
 
 
 //Вычитание часов из времени
 void Time::SubHour(unsigned H)
 {
-	hour -= H;
-	while (hour < 0)
-	{
-		hour += 24;
-	}
+	int SubH = hour - H;
+	while (SubH < 0)
+		SubH += 24;
+	
+	hour = SubH;
 }
 
 //Вычитание минут из времени
 void Time::SubMinute(unsigned M)
 {
-	minute -= M;
-	while (minute < 0)
+	int SubM = minute - M,
+		H = 0;
+	while (SubM < 0)
 	{
-		minute += 60;
-		hour--;
+		SubM += 60;
+		H++;
 	}
-	SubHour(0);
+	minute = SubM;
+	SubHour(H);
 }
 
 //Вычитание секунд из времени
 void Time::SubSecond(unsigned S)
 {
-	second -= S;
-	while (second < 0)
+	int SubS = second - S,
+		M = 0;
+	while (SubS < 0)
 	{
-		second += 60;
-		minute--;
+		SubS += 60;
+		M++;
 	}
-	SubMinute(0);
+	second = SubS;
+	SubMinute(M);
 }
 
 
@@ -143,24 +154,21 @@ void Time::SubSecond(unsigned S)
 //Вернёт кол-во часов в текущем времени 
 float Time::TimeInHour()
 {
-	float H = hour + (minute / 60.0);
-	return H;
+	return hour + (minute / 60.0);
 }
 
 //Перевод времени в минуты
 //Вернёт кол-во минут в текущем времени 
 float Time::TimeInMinute()
 {
-	float M = (hour * 60) + minute + (second / 60.0);
-	return M;
+	return (hour * 60) + minute + (second / 60.0);
 }
 
 //Перевод времени в секунды
 //Вернёт кол-во секунд в текущем времени 
 float Time::TimeInSecond()
 {
-	float S = (hour * 3600) + (minute * 60) + second;
-	return S;
+	return (hour * 3600.0) + (minute * 60) + second;
 }
 
 
@@ -218,19 +226,19 @@ string Time::TimeInString(string flag, char flag2)
 
 
 //Вернуть значение поля часов
-short Time::GetHour()
+unsigned Time::GetHour()
 {
 	return hour;
 }
 
 //Вернуть значение поля минут
-short Time::GetMinute()
+unsigned Time::GetMinute()
 {
 	return minute;
 }
 
 //Вернуть значение поля секунд
-short Time::GetSecond()
+unsigned Time::GetSecond()
 {
 	return second;
 }
@@ -238,19 +246,19 @@ short Time::GetSecond()
 
 
 //Изменить поле часов
-void Time::SetHour(short H)
+void Time::SetHour(TypeTime H)
 {
 	hour = (H <= 23 && H >= 0) ? H : 0;
 }
 
 //Изменить поле минут
-void Time::SetMinute(short M)
+void Time::SetMinute(TypeTime M)
 {
 	minute = (M <= 59 && M >= 0) ? M : 0;
 }
 
 //Изменить поле секуд
-void Time::SetSecond(short S)
+void Time::SetSecond(TypeTime S)
 {
 	second = (S <= 59 && S >= 0) ? S : 0 ;
 }
@@ -308,7 +316,7 @@ bool Time::operator >= (const Time& SecondOperand)
 //private
 
 //Строковая функция возвращающая еденицы измерения времени
-//с правильным окнчанием, исп. в меьтоде вывода
+//с правильным окнчанием, исп. в методе перевода времени в строку
 //flag h - часы
 //flag m - минуты
 //flag s - секунды
