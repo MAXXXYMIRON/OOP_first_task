@@ -70,6 +70,9 @@ public:
 	//flag - 'hms'
 	//flag2 - 'd'
 	string TimeInString(string flag, char flag2);
+	//ѕреобразовать строку созданную методом TimeInString() в число
+	void StringToTime(string strTime);
+	
 
 
 

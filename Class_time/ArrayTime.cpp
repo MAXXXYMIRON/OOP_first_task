@@ -4,9 +4,9 @@
 /**
 	Создание массива объектов
 **/
-Time* memoArrTime(unsigned n)
+ArrTime memoArrTime(unsigned n)
 {
-	Time* ArrTime = new Time[n];
+	ArrTime ArrTime = new Time[n];
 	return ArrTime;
 }
 /**
@@ -23,7 +23,7 @@ VecTime makeVecTime(unsigned n)
 /**
 	Инициализация эл. массива
 **/
-void initArrTime(unsigned n, Time* ArrTime)
+void initArrTime(unsigned n, ArrTime ArrTime)
 {
 	for (unsigned i = 0; i < n; i++)
 	{

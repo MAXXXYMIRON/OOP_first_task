@@ -117,10 +117,12 @@
   <ItemGroup>
     <ClCompile Include="ArrayTime.cpp" />
     <ClCompile Include="Class_time.cpp" />
+    <ClCompile Include="ObjectToFile.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayTime.h" />
+    <ClInclude Include="ObjectToFile.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

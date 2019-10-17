@@ -223,6 +223,39 @@ string Time::TimeInString(string flag, char flag2)
 	return TimeString;
 }
 
+//ѕреобразовать строку созданную методом TimeInString() в число
+void Time::StringToTime(string strTime)
+{
+	string strTime1 = "";
+	int flag = 0;
+
+	for (int i = 0; i < strTime.length(); i++)
+	{
+		strTime1 += strTime[1];
+		if (strTime[i] == ':' || i == strTime.length() - 1)
+		{
+			switch (flag)
+			{
+			case 0:
+			{
+				SetHour(stoi(strTime1));
+			} break;
+
+			case 1:
+			{
+				SetMinute(stoi(strTime1));
+			} break;
+
+			case 2:
+			{
+				SetSecond(stoi(strTime1));
+			} break;
+			}
+			flag++;
+			strTime1 = "";
+		}
+	}
+}
 
 
 //¬ернуть значение пол€ часов
