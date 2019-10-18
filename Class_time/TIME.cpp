@@ -231,7 +231,7 @@ void Time::StringToTime(string strTime)
 
 	for (int i = 0; i < strTime.length(); i++)
 	{
-		strTime1 += strTime[1];
+		strTime1 += strTime[i];
 		if (strTime[i] == ':' || i == strTime.length() - 1)
 		{
 			switch (flag)

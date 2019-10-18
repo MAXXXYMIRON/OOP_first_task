@@ -5,7 +5,7 @@
 #include "ArrayTime.h" 
 
 typedef ofstream WriteFile;
-typedef ifstream& ReadFile;
+typedef ifstream ReadFile;
 
 
 /**
@@ -33,4 +33,4 @@ VecTime fileToVector(string NameFile);
 /**
 	Поиск размерности массива в файле
 **/
-int lengthArrayInFile(ReadFile NameVarFile);
+int lengthArrayInFile(ifstream& NameVarFile);

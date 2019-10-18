@@ -4,22 +4,30 @@
 
 typedef std::vector<Time> VecTime;
 typedef Time* ArrTime;
+typedef std::vector<Time*> VecLinkTime;
 
 /**
 	Создание массива объектов
 **/
-ArrTime memoArrTime(unsigned n);
+ArrTime makeArrTime(unsigned n);
 /**
 	Создание вектора объектов
 **/
 VecTime makeVecTime(unsigned n);
-
+/**
+	Создание вектора указателей на объект
+**/
+VecLinkTime makeVecLinkOnTime(unsigned n);
 
 /**
-	Инициализация эл. массива
+	Вывод массива объектов
 **/
-void initArrTime(unsigned n, ArrTime ArrTime);
+void DisplayArrayTime(ArrTime ArrT, unsigned n);
 /**
-	Инициализация эл. вектора
+	Вывод вектора объектов
 **/
-void initVecTime(VecTime& VecTime);
+void DisplayArrayTime(VecTime VecT);
+/**
+	Вывод вектора указателей на объект
+**/
+void DisplayArrayTime(VecLinkTime VecLinkT);

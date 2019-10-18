@@ -4,11 +4,19 @@
 /**
 	Создание массива объектов
 **/
-ArrTime memoArrTime(unsigned n)
+ArrTime makeArrTime(unsigned n)
 {
-	ArrTime ArrTime = new Time[n];
-	return ArrTime;
+	ArrTime ArrT = new Time[n];
+
+	for (unsigned i = 0; i < n; i++)
+	{
+		ArrT[i] = Time(i);
+	}
+
+	return ArrT;
 }
+
+
 /**
 	Создание вектора объектов
 **/
@@ -16,27 +24,61 @@ VecTime makeVecTime(unsigned n)
 {
 	VecTime VecT;
 	VecT.resize(n);
+
+	for (unsigned i = 0; i < n; i++)
+	{
+		VecT[i] = Time(i);
+	}
+
 	return VecT;
 }
 
 
 /**
-	Инициализация эл. массива
+	Создание вектора указателей на объект
 **/
-void initArrTime(unsigned n, ArrTime ArrTime)
+VecLinkTime makeVecLinkOnTime(unsigned n)
+{
+	VecLinkTime VecLinkT;
+
+	for (unsigned i = 0; i < n; i++)
+	{
+		Time* ElVec = new Time(i);
+		VecLinkT.push_back(ElVec);
+	}
+
+	return VecLinkT;
+}
+
+
+
+/**
+	Вывод массива объектов
+**/
+void DisplayArrayTime(ArrTime ArrT, unsigned n)
 {
 	for (unsigned i = 0; i < n; i++)
 	{
-		ArrTime[i] = Time(i);
+		cout << ArrT[i].TimeInString() << endl;
 	}
 }
 /**
-	Инициализация эл. вектора
+	Вывод вектора объектов
 **/
-void initVecTime(VecTime& VecTime)
+void DisplayArrayTime(VecTime VecT)
 {
-	for (unsigned i = 0; i < VecTime.size(); i++)
+	for (unsigned i = 0; i < VecT.size(); i++)
 	{
-		VecTime[i] = Time(i);
+		cout << VecT[i].TimeInString() << endl;
+	}
+}
+/**
+	Вывод вектора указателей на объект
+**/
+void DisplayArrayTime(VecLinkTime VecLinkT)
+{
+	for (unsigned i = 0; i < VecLinkT.size(); i++)
+	{
+		cout << VecLinkT[i]->TimeInString() << endl;
 	}
 }
