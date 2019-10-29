@@ -174,7 +174,7 @@ float Time::TimeInSecond()
 
 
 //ѕребразование времени в строку
-string Time::TimeInString()
+string Time::TimeToString()
 {
 	string TimeString = to_string(hour) + ":" + 
 		to_string(minute) + ":" + 
@@ -186,7 +186,7 @@ string Time::TimeInString()
 //ѕребразование времени в строку
 //ѕерегрузка метода: с выводом половины дн€
 //flaf - 'd'
-string Time::TimeInString(char flag)
+string Time::TimeToString(char flag)
 {
 	string TimeString = to_string(hour) + ":" +
 		to_string(minute) + ":" +
@@ -199,7 +199,7 @@ string Time::TimeInString(char flag)
 //ѕребразование времени в строку
 //ѕерегрузка метода: с выводом едениц времени
 //flag - 'hms'
-string Time::TimeInString(string flag)
+string Time::TimeToString(string flag)
 {
 	string TimeString = to_string(hour) + " " + units('h') + "\n" +
 		to_string(minute) + " " + units('m') + "\n" +
@@ -213,7 +213,7 @@ string Time::TimeInString(string flag)
 //ѕерегрузка метода: с выводом половины дн€
 //flag - 'hms'
 //flag2 - 'd'
-string Time::TimeInString(string flag, char flag2)
+string Time::TimeToString(string flag, char flag2)
 {
 	string TimeString = to_string(hour) + " " + units('h') + "\n" +
 		to_string(minute) + " " + units('m') + "\n" +

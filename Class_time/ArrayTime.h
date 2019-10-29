@@ -31,3 +31,8 @@ void DisplayArrayTime(VecTime VecT);
 	Вывод вектора указателей на объект
 **/
 void DisplayArrayTime(VecLinkTime VecLinkT);
+
+/**
+	Удаление вектора указателей на объект
+**/
+void DelLinkVec(VecLinkTime& VecLinkT);

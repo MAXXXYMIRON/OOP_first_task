@@ -13,13 +13,18 @@ void main()
 	setlocale(0, "");
 	const unsigned n = 24;
 	
-	//ArrTime ArrT = mekeArrTime(n);
-	VecTime VecT = fileToVector("FileTime.txt");
-	//VecLinkTime VecLinkT = makeVecLinkOnTime(n);
+	Time x = Time(23, 53, 53) + Time(0, 0, 8);
 
-	//DisplayArrayTime(ArrT, n);
+
+	ArrTime ArrT = makeArrTime(n);
+	VecTime VecT = fileToVector("FileTime.txt");
+	VecLinkTime VecLinkT = makeVecLinkOnTime(n);
+
+	DisplayArrayTime(ArrT, n);
 	DisplayArrayTime(VecT);
-	//DisplayArrayTime(VecLinkT);
+	DisplayArrayTime(VecLinkT);
+
+	DelLinkVec(VecLinkT);
 
 	//arrayToFile(ArrT, n, "FileTime.txt");
 

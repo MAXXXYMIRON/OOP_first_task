@@ -15,7 +15,7 @@ private:
 public:
 	Time();
 	~Time();
-	//Cпециальный конструктор экземпляра класса Time
+	//Cпециальный конструктор класса Time
 	//Поле обнуляется, если ему присвоено некорректное значение
 	Time(TypeTime your_hour, TypeTime your_minute, TypeTime your_second);
 	//Коструткор преобразования задающий время в часах
@@ -56,25 +56,23 @@ public:
 
 
 	//Пребразование времени в строку
-	string TimeInString();
+	string TimeToString();
 	//Пребразование времени в строку
 	//Перегрузка метода: с выводом половины дня
 	//flag - 'd'
-	string TimeInString(char flag);
+	string TimeToString(char flag);
 	//Пребразование времени в строку
 	//Перегрузка метода: с выводом едениц времени
 	//flag - 'hms'
-	string TimeInString(string flag);
+	string TimeToString(string flag);
 	//Пребразование времени в строку
 	//Перегрузка метода: с выводом едениц времени и половины дня
 	//flag - 'hms'
 	//flag2 - 'd'
-	string TimeInString(string flag, char flag2);
+	string TimeToString(string flag, char flag2);
 	//Преобразовать строку созданную методом TimeInString() в число
 	void StringToTime(string strTime);
 	
-
-
 
 	//Вернуть значение поля часов
 	unsigned GetHour();

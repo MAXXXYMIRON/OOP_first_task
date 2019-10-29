@@ -1,6 +1,9 @@
-﻿  Time.cpp
-c:\users\knigh\desktop\oop\class_time\class_time\time.cpp(157): warning C4244: return: преобразование "double" в "float", возможна потеря данных
-c:\users\knigh\desktop\oop\class_time\class_time\time.cpp(164): warning C4244: return: преобразование "double" в "float", возможна потеря данных
-c:\users\knigh\desktop\oop\class_time\class_time\time.cpp(171): warning C4244: return: преобразование "double" в "float", возможна потеря данных
-c:\users\knigh\desktop\oop\class_time\class_time\time.cpp(232): warning C4018: <: несоответствие типов со знаком и без знака
+﻿  ArrayTime.cpp
+c:\users\knigh\desktop\oop\class_time\class_time\arraytime.cpp(91): warning C4018: <: несоответствие типов со знаком и без знака
+  Class_time.cpp
+c:\users\knigh\desktop\oop\class_time\class_time\class_time.cpp(12): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  ObjectToFile.cpp
+c:\users\knigh\desktop\oop\class_time\class_time\objecttofile.cpp(14): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\knigh\desktop\oop\class_time\class_time\objecttofile.cpp(32): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
   Class_time.vcxproj -> C:\Users\KNIGH\Desktop\OOP\Class_time\Debug\Class_time.exe

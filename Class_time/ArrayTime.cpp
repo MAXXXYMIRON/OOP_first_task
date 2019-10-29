@@ -40,11 +40,11 @@ VecTime makeVecTime(unsigned n)
 VecLinkTime makeVecLinkOnTime(unsigned n)
 {
 	VecLinkTime VecLinkT;
+	VecLinkT.resize(n);
 
 	for (unsigned i = 0; i < n; i++)
 	{
-		Time* ElVec = new Time(i);
-		VecLinkT.push_back(ElVec);
+		VecLinkT[i] = new Time(i);
 	}
 
 	return VecLinkT;
@@ -59,7 +59,7 @@ void DisplayArrayTime(ArrTime ArrT, unsigned n)
 {
 	for (unsigned i = 0; i < n; i++)
 	{
-		cout << ArrT[i].TimeInString() << endl;
+		cout << ArrT[i].TimeToString() << endl;
 	}
 }
 /**
@@ -69,7 +69,7 @@ void DisplayArrayTime(VecTime VecT)
 {
 	for (unsigned i = 0; i < VecT.size(); i++)
 	{
-		cout << VecT[i].TimeInString() << endl;
+		cout << VecT[i].TimeToString() << endl;
 	}
 }
 /**
@@ -79,6 +79,17 @@ void DisplayArrayTime(VecLinkTime VecLinkT)
 {
 	for (unsigned i = 0; i < VecLinkT.size(); i++)
 	{
-		cout << VecLinkT[i]->TimeInString() << endl;
+		cout << VecLinkT[i]->TimeToString() << endl;
+	}
+}
+
+/**
+	Удаление вектора указателей на объект
+**/
+void DelLinkVec(VecLinkTime& VecLinkT)
+{
+	for (int i = 0; i < VecLinkT.size(); i++)
+	{
+		VecLinkT[i] = nullptr;
 	}
 }

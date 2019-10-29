@@ -13,7 +13,7 @@ void arrayToFile(ArrTime Arr, unsigned lengthArr, string NameFile)
 
 	for (int i = 0; i < lengthArr; i++)
 	{
-		File << Arr[i].TimeInString() << endl;
+		File << Arr[i].TimeToString() << endl;
 	}
 
 	File.close();
@@ -31,7 +31,7 @@ void vectorToFile(VecTime Vec, string NameFile)
 
 	for (int i = 0; i < Vec.size(); i++)
 	{
-		File << Vec[i].TimeInString() << endl;
+		File << Vec[i].TimeToString() << endl;
 	}
 
 	File.close();
